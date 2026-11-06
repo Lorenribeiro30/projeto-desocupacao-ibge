@@ -1,0 +1,11 @@
+PASSO A PASSO
+
+1. Descompacte o arquivo ZIP no computador.
+2. Acesse https://lookerstudio.google.com/ e crie um relatório em branco.
+3. Selecione a fonte de dados Upload de arquivo / Carregar arquivo e envie dados/desocupacao_ibge_2024_2025.csv. Confirme que ano é número e taxa_desocupacao_pct é número (não use tipo Porcentagem, pois 5.0 já representa 5%). Adicione ao relatório.
+4. Adicione um gráfico de barras: dimensão uf, dimensão de detalhamento ano (ou crie dois gráficos com filtro por ano), métrica taxa_desocupacao_pct, agregação MÉDIA. Título: Taxa anual de desocupação (%) — 12 UFs selecionadas. Acrescente a observação: Fonte IBGE/PNAD Contínua; amostra intencional de 12 UFs; 2024 e 2025.
+5. Em Compartilhar, habilite a visualização por quem tiver o link e copie o link. Cole o link no local indicado na seção Visualização do README.md.
+6. No GitHub, crie um repositório público, adicione os arquivos e pastas da pasta descompactada, confirme o envio (Commit changes) e copie o link do repositório para a entrega.
+7. Opcional, caso seja exigido comprovar a execução: abra notebook/analise.ipynb no Google Colab, execute tudo e envie o CSV quando solicitado. Salve o notebook executado e substitua o arquivo no repositório.
+
+Se precisar de ajuda, envie um print da tela atual e siga com o apoio do ChatGPT.
