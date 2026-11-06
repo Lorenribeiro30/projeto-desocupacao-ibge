@@ -26,9 +26,15 @@ A base `dados/desocupacao_ibge_2024_2025.csv` contém uma linha por UF e ano: `u
 
 A diferença entre as taxas sugere investigar as condições locais e priorizar a avaliação de ações de qualificação, intermediação de emprego e apoio à contratação nas áreas de maior desocupação. Antes de implementar medidas, seria necessário examinar todas as UFs, perfil dos trabalhadores, oferta de vagas, sazonalidade e incerteza amostral. Os dados não explicam por si só o motivo das diferenças nem demonstram a eficácia das ações.
 
+## Modelo estatístico e avaliação
+
+Foi ajustada uma regressão linear simples para estimar a taxa anual de 2025 a partir da taxa de 2024 da mesma UF. A avaliação utilizou validação cruzada leave-one-out: a cada rodada, uma das 12 UFs foi reservada para teste e as outras 11 foram usadas no ajuste. A referência considera que a taxa de 2025 seria igual à de 2024.
+
+O erro absoluto médio (MAE) do modelo foi **0,240 ponto percentual**, e a raiz do erro quadrático médio (RMSE) foi **0,326 ponto percentual**; a referência teve MAE de **0,542 ponto percentual**. O modelo teve erro menor neste recorte, mas a amostra é pequena, selecionada por apresentar mínimos históricos nas duas divulgações e possui apenas dois anos. Isso pode produzir resultados otimistas; não permite generalizar para outras UFs ou prever com segurança anos futuros. Não foi feita validação temporal externa. O notebook [modelo_estatistico.ipynb](modelo_estatistico.ipynb) contém código executável, resultados e comparação com a referência.
+
 ## Visualização
 
-A imagem `visualizacoes/comparacao_ufs.png` apresenta as taxas por UF e ano. Painel interativo no Looker Studio: ****https://datastudio.google.com/reporting/80a866d3-d5fb-40b7-bbc8-861ed3c17208****. O gráfico inclui somente as 12 UFs selecionadas; percentuais não devem ser somados nem tratados como número de pessoas.
+A imagem `visualizacoes/comparacao_ufs.png` apresenta as taxas por UF e ano. Painel interativo no Looker Studio: [Acessar o painel](https://datastudio.google.com/reporting/80a866d3-d5fb-40b7-bbc8-861ed3c17208). O gráfico inclui somente as 12 UFs selecionadas; percentuais não devem ser somados nem tratados como número de pessoas.
 
 ## Reprodução
 
